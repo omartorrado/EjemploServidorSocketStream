@@ -26,7 +26,7 @@ public class EjemploServidorSocketStream {
 
             System.out.println("Realizando el bind");
 
-            InetSocketAddress addr = new InetSocketAddress("10.0.6.24", 5555);
+            InetSocketAddress addr = new InetSocketAddress("localhost", 5555);
             serverSocket.bind(addr);
 
             System.out.println("Aceptando conexiones");
@@ -40,15 +40,15 @@ public class EjemploServidorSocketStream {
             
             
             //Esto es el numero de bytes que leemos? parece que si
-            byte[] mensaje = new byte[25];
+            byte[] mensaje = new byte[30];
             //el metodo is.read() devuelve el numero de bytes leidos del stream
             int bytesLeidos=is.read(mensaje);
-
-            System.out.println("Mensaje recibido: " + new String(mensaje) + bytesLeidos);
+            
+            System.out.println("Mensaje recibido: " + new String(mensaje).trim() +","+ bytesLeidos+"bytes");
             
             bytesLeidos=is.read(mensaje);
             
-            System.out.println("Mensaje recibido: " + new String(mensaje) + bytesLeidos);
+            System.out.println("Mensaje recibido: " + new String(mensaje).trim() +","+ bytesLeidos+"bytes");
             
             
 
